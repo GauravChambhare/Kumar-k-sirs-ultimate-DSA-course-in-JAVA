@@ -5,7 +5,8 @@ import java.math.*;
 import java.util.regex.*;
 
 
-
+// below is the optimal approach
+// Time complexity is O(nlogn) induced due to sorting the array
 
 public class CutTheSticks {
     public static void main(String args[]) {
