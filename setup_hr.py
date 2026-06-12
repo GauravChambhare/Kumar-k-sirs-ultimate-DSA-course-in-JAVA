@@ -72,7 +72,7 @@ def create_and_commit():
     # 5. Git Automation
     try:
         subprocess.run(["git", "add", filename], check=True)
-        subprocess.run(["git", "commit", "-m", f"Add solution: {class_name}"], check=True)
+        subprocess.run(["git", "commit", "-m", f"Added solution: {class_name}"], check=True)
         print("Git commit successful.")
     except subprocess.CalledProcessError as e:
         print(f"Git operation failed: {e}")
