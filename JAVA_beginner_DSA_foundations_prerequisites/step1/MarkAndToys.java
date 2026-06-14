@@ -4,7 +4,7 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class MarkAndToys {. //tc O(nlogn) and sc = O(1) if input storing is not considered.
+public class MarkAndToys { //tc O(nlogn) and sc = O(1) if input storing is not considered.
     public static void main(String args[]) {
       Scanner in = new Scanner(System.in);
       int n, k ; 
