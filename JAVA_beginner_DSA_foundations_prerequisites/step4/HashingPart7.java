@@ -5,6 +5,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 /*
+ * QUE : Check if there are any two Equal numbers in an array at a distance less than or equal to k
  * Since we know that if a duplicate is present in arr1 withing k distance/size
  * I am going to use hashset and keep its size = k.
  * HashSet has O(1) time lookup .contains() to check if something already exits.
