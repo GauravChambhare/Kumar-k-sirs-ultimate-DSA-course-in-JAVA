@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.Scanner;
 import java.io.*;
 
-/*
+/* 
  * Given an array and target 'x', Find out the pair from array whose sum forms the number 'x' 
  * when both the numbers of the pair are added)
 */
