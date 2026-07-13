@@ -2,7 +2,7 @@ package JAVA_beginner_DSA_foundations_prerequisites.step4;
 
 import java.util.HashMap;
 import java.util.Map;
-
+// PROBLEM :  COUNT NO. OF SUBARRAYS WITH SUBARRAYSUM==K
 public class HashingSession10 {
 
     public static int noOfSubarraysBruteForce(int arr[], int k){
