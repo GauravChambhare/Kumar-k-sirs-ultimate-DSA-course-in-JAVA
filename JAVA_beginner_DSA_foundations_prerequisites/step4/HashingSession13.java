@@ -1,26 +1,31 @@
 package JAVA_beginner_DSA_foundations_prerequisites.step4;
 
-import java.util.HashMap;
-import java.util.Map;
-
-// Find count of largest/smallest subarrays with sum k in a given array
 public class HashingSession13 {
 
-    // Returns {countOfSmallestLenSubarrays, countOfLargestLenSubarrays}
-    // among all subarrays whose sum equals k.
-    static int[] countLargestSmallest(int[] arr, int k) {
-        // TODO: implement using prefix sum + hashing
-        return new int[] {0, 0};
+    // Check if two strings are anagrams using a frequency array
+    public static boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) return false;
+        // frequency array for lowercase alphabets ('a' to 'z')
+        // unicode value of 'a' = 97
+        int[] freqarr = new int[26];
+        for (char c : s.toCharArray()) {
+            freqarr[c - 97] += 1;
+        }
+        for (char c : t.toCharArray()) {
+            freqarr[c - 97] -= 1;
+            if (freqarr[c - 97] < 0) return false;
+        }
+        return true;
     }
 
+    // main method to run locally
     public static void main(String[] args) {
-        int[] arr = new int[] {1, 2, -4, 5, 3, -2, 4};
-        int k = 6;
-        int[] ans = countLargestSmallest(arr, k);
-        System.out.println(
-            "For subarrays with sum == " + k
-            + ", count of smallest-length = " + ans[0]
-            + " & count of largest-length = " + ans[1]
-        );
+        String s1 = "listen";
+        String t1 = "silent";
+        String s2 = "hello";
+        String t2 = "world";
+
+        System.out.println(s1 + " and " + t1 + " are anagrams: " + isAnagram(s1, t1)); // true
+        System.out.println(s2 + " and " + t2 + " are anagrams: " + isAnagram(s2, t2)); // false
     }
 }
