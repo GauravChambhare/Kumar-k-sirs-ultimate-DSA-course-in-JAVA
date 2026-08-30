@@ -2,13 +2,16 @@ package JAVA_beginner_DSA_foundations_prerequisites.step4;
 
 import java.util.*;
 
+// Given an array “nums” of size “N” - find the total number of pairs(i,j) [i<j] such that (nums[i] + nums[j])%k = 0 (nums[i]>=0,K>=2)
+//  TC is O(N) and SC is O(1)
 public class Session7 {
     
     public static int countOfPairs(int[] a, int k){
         int ans = 0;
-        int[] freqArr = new int[k];
+        int[] freqArr = new int[k]; // we can slo used hashMpa if we want to
 
         for(int j=0; j< a.length; j++){
+            //
             int reminderJ = (a[j]%k + k)%k;  // remainder value of j index position value
             int reminderTraget =  ( k - reminderJ ) % k;
             ans += freqArr[reminderTraget];
