@@ -30,6 +30,8 @@ public class Session10 {
         Map<Integer, Integer> cSM = new HashMap<>();
         int currentSum = 0;
         // we are adding the base case below, which happens when the sum till now is ==k
+        // this is very imp thing, whenever we are solving a subarry problem with prefixSum approach
+        // we need to put (0, 1) in hashmap initially. 
         cSM.put(0, 1);
         for(int num : arr){
             currentSum += num;
