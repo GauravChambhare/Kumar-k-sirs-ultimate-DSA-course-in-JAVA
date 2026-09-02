@@ -1,6 +1,6 @@
 package JAVA_beginner_DSA_foundations_prerequisites.step4;
 
-public class Session16part2 {
+public class Session16part1que1BinarySearchApproach {
     
     // find frequency of x in a given sorted array
 
