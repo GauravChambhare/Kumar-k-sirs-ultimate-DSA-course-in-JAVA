@@ -3,6 +3,7 @@ package JAVA_beginner_DSA_foundations_prerequisites.step4;
 import java.util.Arrays;  
 
 public class Session16 {
+    // find frequency of x in given array
     
 
     // Approach 1 brute force
