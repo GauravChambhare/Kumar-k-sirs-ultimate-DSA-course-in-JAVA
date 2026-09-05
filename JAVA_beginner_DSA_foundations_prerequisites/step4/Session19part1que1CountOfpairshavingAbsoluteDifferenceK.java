@@ -2,7 +2,7 @@ package JAVA_beginner_DSA_foundations_prerequisites.step4;
 
 import java.util.HashMap;
 
-public class Session19part2que1CountSubarraysHavingSumK {
+public class Session19part1que1CountOfpairshavingAbsoluteDifferenceK {
     public static void main(String[] args) {
         Solution sol = new Solution();
 
