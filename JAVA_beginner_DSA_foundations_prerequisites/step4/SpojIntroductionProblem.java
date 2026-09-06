@@ -1,6 +1,4 @@
 package JAVA_beginner_DSA_foundations_prerequisites.step4;
-import java.util.*;
-import java.lang.*;
 import java.io.*;
 
 public class SpojIntroductionProblem {
