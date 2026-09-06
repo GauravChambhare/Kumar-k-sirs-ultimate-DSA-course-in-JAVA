@@ -12,7 +12,7 @@ public class Session20AmazonOAQuestion {
         int n = arr.length;
         // Edge case: Single element array
         if (n == 1) {
-            return (arr[0] == 1) ? 1 : 0;
+            return ((arr[0] % k + k) % k == 1 % k)? 1 : 0;
         }
         long ans = 0;
         long[] p = new long[n + 1]; // p[0] = 0; p[i] = sum of arr[0] ... arr[i-1]
