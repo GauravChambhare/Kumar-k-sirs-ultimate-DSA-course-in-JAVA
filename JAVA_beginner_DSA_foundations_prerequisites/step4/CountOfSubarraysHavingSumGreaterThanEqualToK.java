@@ -10,7 +10,7 @@ public class CountOfSubarraysHavingSumGreaterThanEqualToK {
      * So, we count subarrays with sum less than k using a sliding window,
      * and subtract from total possible subarrays (n*(n+1)/2).
      */
-    public static long approachUsingSlidingWindow(int[] arr, int k) {
+    public static long approachUsingSlidingWindow1(int[] arr, int k) {
         int n = arr.length;
         long totalSubarrays = n * (long)(n + 1) / 2;
         long countLessThanK = 0;
@@ -26,6 +26,34 @@ public class CountOfSubarraysHavingSumGreaterThanEqualToK {
         }
 
         return totalSubarrays - countLessThanK;
+    }
+
+    public static long approachUsingSlidingWindow2(int[] arr, int k){
+        long ans = 0l;
+        // trick tis time is that since we know that array contains all positive integers
+        // then we will initialize i, j  at 0 and keep incrementing j until subarray sum < k
+        // once subarry sum >= k then we will get out of while loop and remove - position index value
+        // add n - j +1 to our answer and then do i++
+        // by doing n-j+1 we are counting all the subarrays whose sum>=k as it took us minimum range of i,j to get the smallest length
+        // subarray to which has sum >=k
+
+        long windowSum = 0l;
+        int n = arr.length;
+        for( int i=0, j=0; i<n; j++){   // every iteration we move j forward
+            windowSum += arr[j];
+
+            while(windowSum<k && j<n){
+                windowSum +=arr[j];
+                j++; // we move j right words
+            }
+            if(windowSum>=k){
+                ans += n - j + 1;
+            }
+            // now we will move i forward, i.e, shrink the window
+
+            windowSum -= arr[i];
+        }
+        return ans ;
     }
 
     /**
@@ -57,9 +85,11 @@ public class CountOfSubarraysHavingSumGreaterThanEqualToK {
         System.out.println("Array: " + Arrays.toString(arr));
         System.out.println("k = " + k);
 
-        long resultSlidingWindow = approachUsingSlidingWindow(arr, k);
+        long resultComplementarySlidingWindow = approachUsingSlidingWindow1(arr, k);
+        long resultSlidingWindow = approachUsingSlidingWindow1(arr, k);
         long resultBruteForce = bruteForce(arr, k);
 
+        System.out.println("Count of subarrays with sum >= k (Sliding Window): " + resultComplementarySlidingWindow);
         System.out.println("Count of subarrays with sum >= k (Sliding Window): " + resultSlidingWindow);
         System.out.println("Count of subarrays with sum >= k (Brute Force): " + resultBruteForce);
 
